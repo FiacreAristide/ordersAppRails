@@ -1,0 +1,43 @@
+<style>
+  .page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.link-section {
+  margin-top: 20px;
+}
+
+.link-button {
+  padding: 8px 12px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.link-button:hover {
+  background-color: #2980b9;
+}
+</style>
+
+
+<div class="page-container">
+  <h1 class="page-title">Modification du client</h1>
+
+  <%= render "form", client: @client %>
+
+  <br>
+
+  <div class="link-section">
+    <%= link_to "Afficher", @client, class: "link-button" %> |
+    <%= link_to "Retour", clients_path, class: "link-button" %>
+  </div>
+</div>

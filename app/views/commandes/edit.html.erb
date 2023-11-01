@@ -1,0 +1,32 @@
+<style>
+  .page-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.navigation-links {
+  margin-top: 20px;
+}
+
+.navigation-links a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.navigation-links a:hover {
+  text-decoration: underline;
+}
+
+</style>
+
+
+<h1 class="page-title">Modification de la commande</h1>
+
+<%= render "form", commande: @commande %>
+
+<div class="navigation-links">
+  <%= link_to "Afficher", @commande %> |
+  <%= link_to "Voir les commandes", commandes_path %>
+</div>

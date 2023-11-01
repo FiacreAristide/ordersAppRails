@@ -1,0 +1,58 @@
+<style>
+  .success-message {
+  color: green;
+  font-weight: bold;
+}
+
+.page-title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#commandes-list {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.more-info-link {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.more-info-link:hover {
+  text-decoration: underline;
+}
+
+.new-command-link {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.new-command-link:hover {
+  background-color: #0056b3;
+}
+
+</style>
+
+<p class="success-message"><%= notice %></p>
+
+<h1 class="page-title">Liste des Commandes</h1>
+
+<div id="commandes-list">
+  <% @commandes.each do |commande| %>
+    <%= render commande %>
+    <p>
+      <%= link_to "Afficher plus", commande, class: "more-info-link" %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Nouvelle commande", new_commande_path, class: "new-command-link" %>

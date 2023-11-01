@@ -1,0 +1,50 @@
+<style>
+  .command-details {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.command-details p {
+  margin-bottom: 10px;
+}
+
+.command-details strong {
+  font-weight: bold;
+}
+
+/* Add more CSS styles as needed */
+
+</style>
+
+
+<div class="command-details" id="<%= dom_id commande %>">
+  <p>
+    <strong>Client:</strong>
+    <%= commande.client_id %>
+  </p>
+
+  <p>
+    <strong>Date Commande:</strong>
+    <%= commande.dateCommande %>
+  </p>
+
+  <p>
+    <strong>Nombre Article:</strong>
+    <%= commande.nombreArticle %>
+  </p>
+
+  <p>
+    <strong>Montant Total:</strong>
+    <%= commande.montantTotal %>
+  </p>
+
+  <p>
+    <strong>Etat:</strong>
+    <%= commande.etat %>
+  </p>
+</div>

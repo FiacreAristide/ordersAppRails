@@ -1,0 +1,28 @@
+<style>
+  .page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.links {
+  margin-top: 20px;
+}
+
+.link-item {
+  text-decoration: none;
+  color: blue;
+  margin-right: 10px;
+}
+</style>
+
+
+<h1 class="page-title">Produit</h1>
+
+<%= render "form", produit: @produit %>
+
+<div class="links">
+  <%= link_to "Afficher", @produit, class: "link-item" %> |
+  <%= link_to "Retour", produits_path, class: "link-item" %>
+</div>
+

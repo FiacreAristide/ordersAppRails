@@ -1,0 +1,51 @@
+<style>
+  .success-message {
+  color: green;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.product-list {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.link-item {
+  text-decoration: none;
+  color: blue;
+  margin-top: 10px;
+  display: block;
+}
+
+.new-product-link {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+</style>
+
+
+<p class="success-message"><%= notice %></p>
+
+<h1 class="page-title">Liste des Produits</h1>
+
+<div class="product-list" id="produits">
+  <% @produits.each do |produit| %>
+    <%= render produit %>
+    <p>
+      <%= link_to "Afficher plus", produit, class: "link-item" %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Nouveau produit", new_produit_path, class: "new-product-link" %>

@@ -1,0 +1,48 @@
+<style>
+  .success-message {
+  color: green;
+}
+
+.command-options {
+  margin-top: 20px;
+}
+
+.edit-command-link, .return-link {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.edit-command-link:hover, .return-link:hover {
+  background-color: #0056b3;
+}
+
+.delete-command-button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.delete-command-button:hover {
+  background-color: #bd2130;
+}
+
+</style>
+
+
+<p class="success-message"><%= notice %></p>
+
+<%= render @commande %>
+
+<div class="command-options">
+  <%= link_to "Editer", edit_commande_path(@commande), class: "edit-command-link" %> |
+  <%= link_to "Retour", commandes_path, class: "return-link" %>
+
+  <%= button_to "Supprimer une commande", @commande, method: :delete, class: "delete-command-button" %>
+</div>

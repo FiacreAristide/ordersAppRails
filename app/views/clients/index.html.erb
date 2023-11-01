@@ -1,0 +1,68 @@
+<style>
+  .notification {
+  color: green;
+}
+
+.page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.client-list {
+  margin-top: 20px;
+}
+
+.client {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.more-link {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.more-link:hover {
+  color: #2980b9;
+}
+
+.new-client-button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.new-client-button:hover {
+  background-color: #2980b9;
+}
+
+</style>
+
+
+<div class="notification">
+  <p><%= notice %></p>
+</div>
+
+<div class="page-container">
+  <h1>Liste des Clients</h1>
+
+  <div id="clients" class="client-list">
+    <% @clients.each do |client| %>
+      <div class="client">
+        <%= render client %>
+        <p>
+          <%= link_to "Afficher plus", client, class: "more-link" %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "Nouveau client", new_client_path, class: "new-client-button" %>
+</div>

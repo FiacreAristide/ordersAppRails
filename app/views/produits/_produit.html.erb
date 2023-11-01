@@ -1,0 +1,41 @@
+<style>
+  .product-info {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+}
+
+.product-detail {
+  margin: 10px 0;
+}
+
+.product-detail strong {
+  font-weight: bold;
+}
+
+.product-detail p {
+  margin: 5px 0;
+}
+
+</style>
+
+
+<div id="<%= dom_id produit %>" class="product-info">
+  <p class="product-detail">
+    <strong>Categorie:</strong>
+    <%= produit.categorie_id %>
+  </p>
+
+  <p class="product-detail">
+    <strong>Libelle:</strong>
+    <%= produit.libelle %>
+  </p>
+
+  <p class="product-detail">
+    <strong>Prix Unitaire:</strong>
+    <%= produit.prixUnitaire %>
+  </p>
+</div>
+

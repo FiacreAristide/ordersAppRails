@@ -1,0 +1,32 @@
+<style>
+  .title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.view-commands-link {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.view-commands-link:hover {
+  background-color: #0056b3;
+}
+
+</style>
+
+
+<h1 class="title">Nouvelle Commande</h1>
+
+<%= render "form", commande: @commande %>
+
+<br>
+
+<div>
+  <%= link_to "Voir les commandes", commandes_path, class: "view-commands-link" %>
+</div>

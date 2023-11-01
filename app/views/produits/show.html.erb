@@ -1,0 +1,44 @@
+<style>
+  .notice {
+  color: green;
+}
+
+.product-details {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-top: 20px;
+}
+
+.buttons-section {
+  margin-top: 20px;
+}
+
+.edit-button,
+.return-button,
+.delete-button {
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+</style>
+
+<div class="notice">
+  <p><%= notice %></p>
+</div>
+
+<div class="product-details">
+  <%= render @produit %>
+</div>
+
+<div class="buttons-section">
+  <%= link_to "Editer", edit_produit_path(@produit), class: "edit-button" %> |
+  <%= link_to "Retour", produits_path, class: "return-button" %>
+
+  <%= button_to "Supprimer un produit", @produit, method: :delete, class: "delete-button" %>
+</div>

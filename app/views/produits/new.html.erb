@@ -1,0 +1,40 @@
+<style>
+  .form-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.product-form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.back-link {
+  margin-top: 20px;
+}
+
+.back-button {
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+</style>
+
+
+<h1 class="form-title">Nouveau Produit</h1>
+
+<div class="product-form">
+  <%= render "form", produit: @produit %>
+</div>
+
+<div class="back-link">
+  <%= link_to "Retour", produits_path, class: "back-button" %>
+</div>
+

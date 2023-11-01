@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: one
+  dateCommande: 2023-10-31
+  montantTotal: 1.5
+  nombreArticle: 1
+  montantTotal: 9.99
+  nombreArticle: 1
+  etat: MyString
+
+two:
+  client: two
+  dateCommande: 2023-10-31
+  montantTotal: 1.5
+  nombreArticle: 1
+  montantTotal: 9.99
+  nombreArticle: 1
+  etat: MyString

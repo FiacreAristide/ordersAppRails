@@ -1,0 +1,46 @@
+<style>
+  .client-details {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.client-actions {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+</style>
+
+
+<div class="client-details">
+  <p class="success-message"><%= notice %></p>
+  
+  <%= render @client %>
+
+  <div class="client-actions">
+    <%= link_to "Editer", edit_client_path(@client) %> |
+    <%= link_to "Retour", clients_path %>
+
+    <%= button_to "Supprimer un client", @client, method: :delete %>
+  </div>
+</div>
+

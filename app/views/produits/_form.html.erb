@@ -1,0 +1,77 @@
+<style>
+  .product-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  text-align: center;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+</style>
+
+
+<%= form_with(model: produit, class: "product-form") do |form| %>
+  <% if produit.errors.any? %>
+    <div class="error-message">
+      <h2>Impossible de créer ce produit</h2>
+    </div>
+  <% end %>
+
+  <div class="form-field">
+    <%= form.label :categorie_id,"Catégorie", class: "form-label" %>
+    <%= form.number_field :categorie_id, class: "form-input" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :libelle,"Libellé", class: "form-label" %>
+    <%= form.text_field :libelle, class: "form-input" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :prixUnitaire,"Prix Unitaire", class: "form-label" %>
+    <%= form.text_field :prixUnitaire, class: "form-input" %>
+  </div>
+
+  <div class="submit-button">
+    <%= form.submit "Ajouter", class: "submit-btn" %>
+  </div>
+<% end %>

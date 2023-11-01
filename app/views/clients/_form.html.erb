@@ -1,0 +1,71 @@
+<style>
+  .client-form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+}
+</style>
+
+
+
+
+<%= form_with(model: client, class: "client-form") do |form| %>
+  <% if client.errors.any? %>
+    <div class="error-message">
+      <h2>Impossible d'enregistrer ce client</h2>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nom, class: "form-label" %>
+    <%= form.text_field :nom, class: "form-input" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :adresse, class: "form-label" %>
+    <%= form.text_field :adresse, class: "form-input" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :telephone, class: "form-label" %>
+    <%= form.text_field :telephone, class: "form-input" %>
+  </div>
+
+  <div class="form-group" style="margin-top: 10px">
+    <%= form.submit "Enregistrer", class: "submit-button" %>
+  </div>
+<% end %>

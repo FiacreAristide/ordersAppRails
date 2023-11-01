@@ -1,0 +1,67 @@
+<style>
+  .commande-form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.form-field {
+  margin-bottom: 10px;
+}
+
+.form-field label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-button {
+  margin-top: 10px;
+}
+
+</style>
+
+
+<%= form_with(model: commande, html: { class: "commande-form" }) do |form| %>
+  <% if commande.errors.any? %>
+    <div class="error-message">
+      <h2>Le client n'existe pas ! Veuillez vérifier votre liste de clients</h2>
+    </div>
+  <% end %>
+
+  <div class="form-field">
+    <%= form.label :client_id %>
+    <%= form.text_field :client_id %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :dateCommande, "Date de la commande" %>
+    <%= form.date_field :dateCommande %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :nombreArticle, "Nombre d'articles" %>
+    <%= form.number_field :nombreArticle %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :montantTotal, "Montant total" %>
+    <%= form.text_field :montantTotal %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :etat %>
+    <%= form.select :etat, ['En attente', 'En traitement', 'Expédiée', 'Livrée', 'Annulée'] %>
+  </div>
+
+  <div class="form-button">
+    <%= form.submit "Valider" %>
+  </div>
+<% end %>
